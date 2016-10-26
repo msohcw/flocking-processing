@@ -344,13 +344,13 @@ BitSet within(float x, float y, float r){
    BitSet candidates;
    
    if(memoized[gx][gy][g]){
-   candidates = (BitSet) (memo[gx][gy][g]).clone();
+     candidates = (BitSet) (memo[gx][gy][g]).clone();
    }else{
    candidates = new BitSet(N);
    for(int i = left; i <= right; i++){
-   for(int j = up; j <= down; j++){
-      candidates.or(grid[i][j]);
-   }
+     for(int j = up; j <= down; j++){
+        candidates.or(grid[i][j]);
+     }
    }
    memoized[gx][gy][g] = true;
    memo[gx][gy][g] = (BitSet) (candidates).clone();
